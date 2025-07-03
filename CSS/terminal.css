@@ -1,74 +1,82 @@
-
-
 #my-terminal {
-    width: 80%;
-    margin: 5vh 10% 1vh 5%;
-    padding: 3vh 5% 3vh 3%;
-    background-color: rgb(16, 22, 46);
-    /* background-color: blueviolet; */
-    color: #fff;
-    border-width: 5px 3px 3px 3px; 
-    border-style: solid;
-    border-color: rgb(94, 180, 117);
-    border-radius: 5px;
-    outline: 2px solid rgb(94, 108, 180);
-    font-family: 'Courier New', Courier, monospace;
-}
+            width: 90%; /* Wider terminal */
+            margin: 5vh auto 1vh auto; /* Center terminal */
+            padding: 3vh 5% 3vh 3%;
+            background-color: var(--terminal-bg);
+            color: var(--text-color-light);
+            border: 3px solid var(--accent-green); /* Thicker border */
+            border-radius: 8px; /* More rounded */
+            outline: 2px solid var(--accent-blue);
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+        }
 
-#output {
-    min-height: 35vh;
-    overflow-y: scroll;
-}
+        #output {
+            min-height: 30vh; /* Adjusted min-height */
+            max-height: 50vh; /* Max height with scroll */
+            overflow-y: auto; /* Scroll for overflow */
+            padding-right: 10px; /* Space for scrollbar */
+        }
 
-#input-container {
-    background-color: rgb(16, 22, 46);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
+        #input-container {
+            background-color: var(--terminal-bg);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 15px; /* More space */
+            border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle separator */
+            padding-top: 10px;
+        }
 
-#command-input {
-    width: 100%;
-    outline: none;
-    font-weight: 500;
-    font-size: 2ch;
-    padding: 5px; 
-}
+        #command-input {
+            width: 100%;
+            outline: none;
+            font-weight: 500;
+            font-size: 1.1rem; /* Relative font size */
+            padding: 5px;
+            background-color: transparent;
+            border: none;
+            color: var(--text-color-light);
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-#prompt { 
-    color: lightblue; 
-}
+        #prompt {
+            color: lightblue;
+            font-size: 1.2rem; /* Relative font size */
+            white-space: nowrap; /* Prevent prompt from wrapping */
+            padding-right: 10px;
+        }
 
-#output div {  
-    color: rgb(140, 156, 198);  
-    font-size: 1rem
-}
+        #output div {
+            color: rgb(140, 156, 198);
+            font-size: 1rem;
+            margin-bottom: 5px; /* Space between output lines */
+        }
+        #output .error-message {
+            color: rgb(226, 74, 65); /* Red for error messages */
+        }
+        #output .success-message {
+            color: var(--accent-green); /* Green for success messages */
+        }
 
-#input-container label {
-    color: rgb(94, 180, 117);
-    font-size: 1.5vw;
-    /* background-color: rgb(151, 108, 55); */
-    width: 25vw;
-}
 
-#input-container input {
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    outline: none;
-    width: calc(100vw - 25vw);
-    /* background-color: rgb(43, 73, 2); */
-}
-
-@media (max-width: 950px) {
-    #input-container label {
-        font-size: 1ch;
-    }
-    #input-container input {
-        font-size: 1ch;
-    }
-
-}
+        @media (max-width: 950px) {
+            #input-container label {
+                font-size: 0.9rem;
+            }
+            #input-container input {
+                font-size: 0.9rem;
+            }
+            #prompt {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 600px) {
+            #my-terminal {
+                width: 95%;
+                padding: 2vh 3% 2vh 2%;
+            }
+            #output {
+                min-height: 25vh;
+            }
+        }
