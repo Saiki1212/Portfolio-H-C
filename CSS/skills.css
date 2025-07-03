@@ -1,73 +1,83 @@
-/* skills.css */
+#skillsHeader,
+        #projectheader,
+        #training-header {
+            display: flex;
+            font-family: 'Inter', sans-serif; /* Consistent font */
+            font-size: 2.2rem; /* Adjusted font size */
+            padding-left: 5%;
+            margin-top: 8vh; /* Consistent top margin */
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
 
-#skillsHeader {
-    display: flex;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 4ch;
-    padding-left: 5%;
-    margin-top: 10vh;
-    /* background-color: rgb(125, 34, 210); */
-}
+        #my-skills {
+            display: flex;
+            flex-direction: column;
+            padding: 5vh 10% 5vh 5%;
+            gap: 3vh;
+        }
 
-#my-skills {
-    display: flex;
-    flex-direction: column;
-    padding: 5vh 10% 5vh 5%;
-    gap: 3vh;
-    /* width: 100%; */
-    /* background-color: rgb(166, 142, 189); */
-}
+        #my-skills img {
+            width: 80px; /* Fixed size for skill icons */
+            height: 80px;
+            object-fit: contain;
+            margin-left: 2%; /* Adjusted margin */
+            transition: box-shadow 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
+            border-radius: 8px; /* Default rounded corners */
+        }
 
-#my-skills img{
-    width: 10vh;
-    height: 10vh;
-    /* border-radius: 10px; */
-    margin-left: 2%;
-    /* background-color: blueviolet; */
-}
-
-@media (max-width: 1050px) {
-    #my-skills img{
-        width: 10vw;
-        height: 10vw;
-        border-radius: 10px;
-        margin-left: 0.5%;
-    }
-}
-
-#my-skills img:hover {
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    border-radius: 8px;
-}
-
+        @media (max-width: 1050px) {
+            #my-skills img {
+                width: 60px; /* Smaller on tablets */
+                height: 60px;
+                margin-left: 0.5%;
+            }
+        }
+        @media (max-width: 600px) {
+            #my-skills img {
+                width: 50px; /* Even smaller on mobile */
+                height: 50px;
+            }
+        }
 
 
-#my-skills span {
-    font-family: 'Courier New', Courier, monospace;
-    /* margin-top: 3vh; */
-}
+        #my-skills img:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            border-radius: 12px; /* More rounded on hover */
+            transform: scale(1.1); /* Slight zoom effect */
+        }
 
-.frame-and-back {
-    display: flex;
-    flex-direction: row;
-    /* background-color: aquamarine; */
-    gap: 10%;
-}
+        #my-skills span {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem; /* Adjusted font size */
+            font-weight: 500;
+            margin-bottom: 1vh; /* Space below category name */
+        }
 
-.frame-and-back div{
-    display: flex;
-    flex-direction: column;
-    margin-left: 2%;
-    justify-content: center;
-    align-items: center;
-}
+        .frame-and-back {
+            display: flex;
+            flex-direction: row;
+            gap: 10%;
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: center; /* Center items */
+        }
 
-.spacing {
-    gap: 5%;
-    border: 1.5px dashed rgb(75, 75, 75);
-    border-radius: 5px;
-    display: flex;
-    padding: 2vh 0% 2vh 0%;
-    /* background-color: aquamarine; */
-}
+        .frame-and-back div {
+            display: flex;
+            flex-direction: column;
+            margin-left: 2%;
+            justify-content: center;
+            align-items: center;
+            min-width: 150px; /* Minimum width for each category */
+        }
+
+        .spacing {
+            gap: 20px; /* Consistent gap for items */
+            border: var(--border-dashed);
+            border-radius: 12px; /* More rounded */
+            display: flex;
+            padding: 20px; /* Consistent padding */
+            flex-wrap: wrap; /* Allow items to wrap */
+            justify-content: center; /* Center items within the spacing div */
+        }
