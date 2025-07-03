@@ -1,201 +1,317 @@
-/* * {
-    margin: 0;
-    padding: 0;
-} */
+nav {
+            width: 100%;
+            background-color: var(--nav-bg);
+            box-shadow: 0 3px 8px var(--shadow-light); /* Softer shadow */
+            position: sticky; /* Sticky navigation */
+            top: 0;
+            z-index: 1000;
+        }
 
-.info-div{
-    /* width: 100%; */
-    /* background-color: rgb(181, 104, 104); */
-    display: flex;
-    flex-direction: row;
-    gap: 5%;
-    align-items: center;
-    margin-top: 5vh;
-    padding: 10vh 10% 10vh 5%;
-}
+        nav ul {
+            width: 100%;
+            display: flex;
+            list-style: none;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 20px; /* Added padding */
+        }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
-    /* background-color: rgb(227, 35, 35); */
-    height: 100%;
-    gap: 5vh;
-}
+        nav li {
+            height: 60px;
+        }
 
-.my-image {
-    width: 30vw;
-    height: 30vw;
-    border-radius: 30vw;
-    /* background-color: blueviolet; */
-}
+        nav a {
+            height: 100%;
+            text-decoration: none;
+            padding: 0 20px; /* Adjusted padding */
+            display: flex;
+            align-items: center;
+            color: var(--text-color-dark);
+            font-size: 1rem; /* Relative font size */
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+        }
 
-.my-image:hover{
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-}
+        nav a:hover {
+            background-color: rgb(232, 231, 231);
+            color: var(--accent-blue); /* Highlight on hover */
+        }
 
-.about-me {
-    font-size: 2.1ch;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight:400;
-    padding: 0% 10% 0% 0%;
-    /* text-align:left; */
-    /* color: forestgreen; */
-}
+        nav li:first-child {
+            margin-right: auto;
+        }
 
-.my-name {
-    font-size: 5ch;
-    font-family: 'Courier New', Courier, monospace;
-}
+        .sign {
+            width: 150px; /* Adjusted width */
+            height: 100%;
+            object-fit: contain; /* Ensures image scales correctly */
+            cursor: pointer;
+            padding: 10px 0; /* Added padding */
+        }
 
-.leet-header {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 500;
-    font-size: 4ch;
-}
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba(161, 157, 157, 0.2);
+            backdrop-filter: blur(5px);
+            box-shadow: -10px 0 10px var(--shadow-light);
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 20px; /* Added padding */
+        }
 
-.leet-data-container {
-    border:1px solid rgb(246, 244, 244);
-    border-radius: 8px;
-    padding: 1% 2% 1% 2%;
-    width: 50%;
-    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
-    /* background-color: rgb(55, 255, 0); */
-}
+        .sidebar li {
+            width: 100%;
+        }
+        .sidebar a {
+            width: 100%;
+            padding: 15px 20px; /* More padding for touch targets */
+            font-size: 1.1rem;
+        }
+        .menu-btn {
+            display: none;
+            padding: 0 20px; /* Consistent padding */
+        }
 
-.leet-data {
-    /* background-color: blue; */
-    display: flex;
-    width: 100%;
-    height: 15vh;
-    justify-content: space-around;
-    align-items: center;
-}
+        @media (max-width: 750px) {
+            .HideOnMobile {
+                display: none;
+            }
+            .menu-btn {
+                display: block;
+            }
+        }
 
-.leet-data p, span {
-    font-size: 1.5vw;
-}
+        @media (max-width: 450px) {
+            .sidebar {
+                width: 100%;
+            }
+        }
 
-.problems-solved {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 3ch;
-    font-weight: 500;
-}
+        /* Info.css */
+        .info-div {
+            display: flex;
+            flex-direction: row;
+            gap: 5%;
+            align-items: center;
+            margin-top: 5vh;
+            padding: 5vh 10% 5vh 5%; /* Adjusted padding */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center; /* Center content when wrapped */
+        }
 
-.leet-data div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 4vw;
-    height: 4vw;
-    background-color: rgb(247, 250, 250);
-    padding: 1.5% 7% 1.5% 7%;
-    border-radius: 8px;
-}
+        .about {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: 3vh; /* Adjusted gap */
+            flex: 1; /* Allow flex item to grow */
+            min-width: 300px; /* Minimum width before wrapping */
+        }
 
-.leet-easy {
-    color: rgb(88, 184, 185);
-}
-.leet-data-easy:hover {
-    background-color: rgb(227, 249, 249);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
+        .my-image {
+            width: 25vw; /* Slightly smaller image */
+            height: 25vw;
+            border-radius: 50%; /* Perfect circle */
+            object-fit: cover; /* Ensures image covers the area */
+            box-shadow: 0 8px 20px var(--shadow-medium); /* Enhanced shadow */
+            transition: box-shadow 0.3s ease;
+        }
 
-.leet-medium {
-    color: rgb(242, 186, 63);
-}
-.leet-data-medium:hover {
-    background-color: rgb(251, 241, 223);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
+        .my-image:hover {
+            box-shadow: 0 12px 25px var(--shadow-strong);
+            cursor: pointer;
+        }
 
-.leet-hard {
-    color: rgb(226, 74, 65);
-}
-.leet-data-hard:hover {
-    background-color: rgb(249, 226, 225);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
+        .about-me {
+            font-size: 1.1rem; /* Relative font size */
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            padding-right: 5%; /* Adjusted padding */
+        }
 
-@media (max-width: 630px) {
-    .info-div{
-        flex-direction:column-reverse;
-        margin-top: 5vh;
-        padding-top: 0vh;
-    }
-    .my-image {
-        width: 60vw;
-        height: 60vw;
-        border-radius: 30vw;
-        /* background-color: blueviolet; */
-    }
-}
+        .my-name {
+            font-size: 2.8rem; /* Larger, more impactful */
+            font-family: 'Inter', sans-serif;
+            font-weight: 700; /* Bolder */
+            color: var(--accent-blue); /* Highlight name */
+        }
 
-.my-links {
-    /* background-color: blueviolet; */
-    width: 100%;
-    height: 100vh;
-    margin-left: 5%;
-    margin-top: 3vh;
-    justify-content: space-evenly;
-}
+        .leet-header {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem; /* Adjusted font size */
+            margin-bottom: 2vh;
+        }
 
-.icons {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    margin-right: 1%;
-    margin-top: 3vh;
-    /* padding: 1% 1% 0% 1%; */
-    /* background-color: rgb(49, 226, 43); */
-}
+        .leet-data-container {
+            border: 1px solid var(--border-color-light);
+            border-radius: 12px; /* More rounded */
+            padding: 20px 30px; /* Increased padding */
+            width: 100%; /* Full width within its container */
+            max-width: 500px; /* Max width for larger screens */
+            box-shadow: 0 5px 15px var(--shadow-light);
+            background-color: var(--nav-bg);
+        }
 
-.icons:hover {
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.9);
-}
+        .leet-data {
+            display: flex;
+            width: 100%;
+            height: auto; /* Auto height */
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping */
+            gap: 15px; /* Gap between items */
+        }
 
-.resume:hover {
-    cursor: pointer;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
-}
+        .leet-data p,
+        .leet-data span {
+            font-size: 1.2rem; /* Adjusted font size */
+        }
 
-.resume {
-    display: flex;
-    width: 15vw;
-    margin-left: 5%;
-    margin-top: 3vh;
-    background-color: rgb(238, 241, 241);
-    padding: 1vh 2vw 1vh 2vw;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    font-size: 2vw;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 500;
-}
+        .problems-solved {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 15px;
+            display: block; /* Ensure it takes full width */
+        }
 
-@media (max-width: 800px) {
-    .leet-data-container{
-        width: 100%;
-        /* height: 10vh; */
-    }
-    .leet-data div {
-        width: 5vw;
-        height: 5vw;
-        border-radius: 1vw;
-    }
-    .leet-data p, span {
-        font-size: 3vw;
-    }
-    .problems-solved {
-        font-size: 3vw;
-    }
-    .leet-header {
-        font-size: 4vw;
-    }
-}
+        .leet-data div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100px; /* Fixed width for better consistency */
+            height: 100px; /* Fixed height */
+            background-color: rgb(247, 250, 250);
+            padding: 10px;
+            border-radius: 10px; /* More rounded */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .leet-easy {
+            color: rgb(88, 184, 185);
+        }
+        .leet-data-easy:hover {
+            background-color: rgb(227, 249, 249);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transform: translateY(-3px); /* Subtle lift effect */
+        }
+
+        .leet-medium {
+            color: rgb(242, 186, 63);
+        }
+        .leet-data-medium:hover {
+            background-color: rgb(251, 241, 223);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transform: translateY(-3px);
+        }
+
+        .leet-hard {
+            color: rgb(226, 74, 65);
+        }
+        .leet-data-hard:hover {
+            background-color: rgb(249, 226, 225);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 630px) {
+            .info-div {
+                flex-direction: column-reverse;
+                padding-top: 0vh;
+            }
+            .my-image {
+                width: 60vw;
+                height: 60vw;
+                border-radius: 50%;
+                margin-bottom: 3vh; /* Add space below image */
+            }
+            .about {
+                align-items: center;
+                text-align: center;
+                padding: 0 5%;
+            }
+            .about-me {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .leet-data-container {
+                width: 90%; /* Adjust width for smaller tablets */
+                max-width: none;
+            }
+            .leet-data div {
+                width: 80px; /* Adjust size for smaller screens */
+                height: 80px;
+            }
+            .leet-data p,
+            .leet-data span {
+                font-size: 0.9rem;
+            }
+            .problems-solved {
+                font-size: 1rem;
+            }
+            .leet-header {
+                font-size: 1.5rem;
+            }
+        }
+
+        .my-links {
+            display: flex; /* Ensure flex for icons */
+            width: 100%;
+            margin-left: 5%;
+            margin-top: 3vh;
+            justify-content: center; /* Center icons */
+            gap: 20px; /* Space between icons */
+            flex-wrap: wrap; /* Allow wrapping */
+            padding-right: 5%; /* Balance padding */
+        }
+
+        .icons {
+            width: 45px; /* Slightly smaller icons */
+            height: 45px;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .icons:hover {
+            box-shadow: 0 5px 15px var(--shadow-strong);
+            transform: translateY(-5px); /* Lift effect */
+        }
+
+        .resume {
+            display: flex;
+            width: 180px; /* Fixed width for consistency */
+            margin: 3vh auto 0 auto; /* Center the resume button */
+            background-color: rgb(238, 241, 241);
+            padding: 1vh 2vw;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            font-size: 1.1rem; /* Adjusted font size */
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 2px 8px var(--shadow-light);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .resume:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
