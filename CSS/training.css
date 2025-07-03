@@ -1,46 +1,51 @@
-#training-header {
-    display: flex;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 4ch;
-    padding-left: 5%;
-    margin-top: 8vh;
-}
-
 .t-left {
-    display: flex;
-    flex-direction: column;
-}
+            display: flex;
+            flex-direction: column;
+            flex: 1; /* Allow to grow */
+            min-width: 300px; /* Minimum width before wrapping */
+        }
 
-.t1-name {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 5ch;
-    font-weight: 500;
-    margin-left: 5%;
-}
-.t2-name {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 3ch;
-    font-weight: 400;
-    margin: 3vh 0 5vh 5%;
-}
+        .t1-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem; /* Adjusted font size */
+            font-weight: 600;
+            margin-left: 5%;
+            color: var(--accent-blue);
+        }
+        .t2-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem; /* Adjusted font size */
+            font-weight: 400;
+            margin: 1vh 0 3vh 5%; /* Adjusted margin */
+            color: #666; /* Softer color */
+        }
 
-.t-right  img{
-    width: 20vw;
-    height: 20vw;
-    border-radius: 15px;
-}
+        .t-right img {
+            width: 250px; /* Fixed width for training image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 15px;
+            object-fit: contain;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+        }
 
-@media (max-width: 650px) {
-    .t-right  img{
-        width: 70vw;
-        height: 60vw;
-    }
-}
+        .t-right img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px var(--shadow-medium);
+        }
 
-@media (max-width: 500) {
-    .t1-name {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 3ch;
-        font-weight: 500;
-    }
-}
+
+        @media (max-width: 650px) {
+            .t-right img {
+                width: 80vw; /* Responsive width for mobile */
+                height: auto;
+                margin-bottom: 3vh;
+            }
+            .t1-name {
+                font-size: 2rem;
+            }
+            .t2-name {
+                font-size: 1.4rem;
+            }
+        }
